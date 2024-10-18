@@ -26,7 +26,7 @@ export const Information = () => {
             <Text title="Email:" name="tranvantinh0923coze@gmail.com" />
             <Text title="Location:" name="Da Nang, VN" />
             <Text title="Languages:" name="Vietnamese, English" />
-            <h2 className="text-2xl font-semibold flex items-center gap-2 ">
+            <h2 className="text-2xl font-semibold flex items-center gap-2 leading-10 ">
               Elsewhere:
               <div className=" flex items-center justify-center gap-2">
                 <a href="https://www.facebook.com/cutun0902" target="blank">
