@@ -1,6 +1,11 @@
 import { Animation } from './Animation';
 import { Text } from './Text';
-import { FaFacebook, FaSquareXTwitter, FaTelegram } from 'react-icons/fa6';
+import {
+  FaFacebook,
+  FaSquareXTwitter,
+  FaTelegram,
+  FaGithub
+} from 'react-icons/fa6';
 export const Information = () => {
   return (
     <div>
@@ -24,9 +29,18 @@ export const Information = () => {
             <h2 className="text-2xl font-semibold flex items-center gap-2 ">
               Elsewhere:
               <div className=" flex items-center justify-center gap-2">
-                <FaFacebook color="#0866ff" />
-                <FaSquareXTwitter />
-                <FaTelegram color="30A3E6" />
+                <a href="https://www.facebook.com/cutun0902" target="blank">
+                  <FaFacebook color="#0866ff" />
+                </a>
+                <a href="https://x.com/DenniTran" target="blank">
+                  <FaSquareXTwitter />
+                </a>
+                <a href="https://t.me/dennistran92" target="blank">
+                  <FaTelegram color="30A3E6" />
+                </a>
+                <a href="https://github.com/dennislove" target="blank">
+                  <FaGithub />
+                </a>
               </div>
             </h2>
           </div>

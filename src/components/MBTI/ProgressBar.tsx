@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+import 'animate.css';
 export const ProgressBar = ({
   percentage,
   color,
@@ -37,7 +37,7 @@ export const ProgressBar = ({
 
         {/* The sliding circle */}
         <div
-          className="absolute w-6 h-6  border-[4px] border-white rounded-full flex justify-center items-center transition-all duration-1000"
+          className="absolute w-6 h-6  border-[4px] border-white rounded-full flex justify-center items-center transition-all duration-1000 animate__animated animate__heartBeat"
           style={{ left: `calc(${currentPercentage}% - 12px)` }} // Offsetting to center the circle
         >
           <span
