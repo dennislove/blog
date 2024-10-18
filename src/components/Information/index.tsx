@@ -11,7 +11,7 @@ export const Information = () => {
     <div>
       <div className="text-center mt-12 ">
         <h2 className=" font-bold text-3xl">Trần Văn Tĩnh</h2>
-        <p className="text-2xl">Web Developer ReactJS</p>
+        <p className="text-2xl">Web Developer</p>
       </div>
 
       <div className=" grid grid-cols-2 gap-20 mt-12">
