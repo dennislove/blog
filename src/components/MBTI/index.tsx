@@ -11,26 +11,32 @@ export const MBTI = () => {
           <ProgressBar
             percentage={79}
             color="#5996B1"
-            name2="Extraverted"
-            name1="Introverted"
+            name1="Extraverted"
+            name2="Introverted"
           />
           <ProgressBar
             percentage={68}
             color="#DCB051"
-            name2="Intuitive"
-            name1="Observant"
+            name1="Intuitive"
+            name2="Observant"
           />
           <ProgressBar
             percentage={53}
             color="#56A278"
-            name2="Feeling"
-            name1="Thinking"
+            name1="Feeling"
+            name2="Thinking"
           />
           <ProgressBar
             percentage={69}
             color="#826396"
-            name2="Judging"
-            name1="Prospecting"
+            name1="Judging"
+            name2="Prospecting"
+          />
+          <ProgressBar
+            percentage={54}
+            color="#f25e62"
+            name1="Assertive"
+            name2="Turbulent"
           />
         </div>
       </div>

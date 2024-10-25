@@ -14,7 +14,7 @@ import shadow from '../../assets/shadow.png';
 
 export const Animation = () => {
   return (
-    <div className=" relative">
+    <div className=" relative mt-10">
       <img
         src={item1}
         alt="language"
@@ -23,7 +23,7 @@ export const Animation = () => {
       <img
         src={item2}
         alt="roof"
-        className="animate__animated absolute left-[18%] top-[30%] z-20 animate__fadeInUpBig"
+        className="animate__animated absolute left-[18%] top-[40%] z-20 animate__fadeInUpBig"
       />
       <img
         src={item3}

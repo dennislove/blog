@@ -11,7 +11,7 @@ export const ProgressBar = ({
   name1: string;
   name2: string;
 }) => {
-  const [currentPercentage, setCurrentPercentage] = useState(0);
+  const [currentPercentage, setCurrentPercentage] = useState(50);
   const progressBarRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -32,45 +32,47 @@ export const ProgressBar = ({
 
     return () => observer.disconnect();
   }, []);
+  let endPoint: number = 100 - percentage;
 
   useEffect(() => {
     if (isVisible) {
-      let start = 0;
+      let start: number = 50;
       const interval = setInterval(() => {
-        if (start <= percentage) {
-          setCurrentPercentage(start);
-          start++;
+        if (endPoint > start && currentPercentage < endPoint) {
+          setCurrentPercentage((prev) => prev + 1); // Move right
+        } else if (endPoint < start && currentPercentage > endPoint) {
+          setCurrentPercentage((prev) => prev - 1); // Move left
         } else {
-          clearInterval(interval);
+          clearInterval(interval); // Stop once target is reached
         }
       }, 20); // Adjust speed of percentage increase
+
       return () => clearInterval(interval);
     }
-  }, [isVisible, percentage]);
-
+  }, [isVisible, percentage, currentPercentage]);
   return (
     <div
       ref={progressBarRef}
-      className=" flex items-center justify-center gap-2 py-4 pt-8 "
+      className=" grid grid-cols-6 gap-4 items-center justify-center py-4 pt-8 "
     >
-      <h3 className=" text-xl">{name1}</h3>
-      <div className="relative w-[400px] bg-gray-200 rounded-full h-4 flex items-center">
+      <h3 className=" text-xl text-right">{name1}</h3>
+      <div className="col-start-2 col-span-4  relative w-full bg-gray-200 rounded-full  flex items-center">
         {/* The background progress bar */}
         <div
-          className="absolute bg-blue-500 h-6 rounded-full transition-all duration-1000"
+          className="absolute bg-blue-500 h-4 rounded-full transition-all duration-1000"
           style={{ width: `100%`, backgroundColor: `${color}` }}
         ></div>
 
         {/* The sliding circle */}
         <div
           className="absolute w-6 h-6  border-[4px] border-white rounded-full flex justify-center items-center transition-all duration-1000 animate__animated animate__heartBeat"
-          style={{ left: `calc(${currentPercentage}% - 12px)` }} // Offsetting to center the circle
+          style={{ left: `calc(${currentPercentage}% - 12px)` }}
         >
           <span
             className={` text-base font-bold absolute -top-8 flex gap-1 `}
             style={{ color: color }}
           >
-            {currentPercentage}% <span className="text-black">{name2}</span>
+            {percentage}% <span className="text-black">{name1}</span>
           </span>
         </div>
       </div>

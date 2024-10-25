@@ -5,7 +5,9 @@ import banner1 from '../../assets/bg-card-1.png';
 import logo2 from '../../assets/logo-card-2.png';
 import banner2 from '../../assets/bg-card-2.png';
 import logo3 from '../../assets/logo-card-3.png';
-// import banner3 from '../../assets/bg-card-3.png';
+import banner3 from '../../assets/bg-card-3.png';
+import logo4 from '../../assets/logo-card-4.png';
+import banner4 from '../../assets/bg-card-4.png';
 export const Projects = () => {
   const listPrj = [
     {
@@ -21,16 +23,16 @@ export const Projects = () => {
       imgLogo: logo2
     },
     {
-      link: 'https://dongsonevent-dns.web.app/',
+      link: '#',
       name: 'OHF',
-      imgBanner: banner1,
+      imgBanner: banner3,
       imgLogo: logo3
     },
     {
-      link: 'https://dongsonevent-dns.web.app/',
+      link: '#',
       name: 'DNS',
-      imgBanner: banner1,
-      imgLogo: logo1
+      imgBanner: banner4,
+      imgLogo: logo4
     }
   ];
   return (
