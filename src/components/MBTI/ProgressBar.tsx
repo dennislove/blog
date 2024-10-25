@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import 'animate.css';
 export const ProgressBar = ({
   percentage,
@@ -12,21 +12,47 @@ export const ProgressBar = ({
   name2: string;
 }) => {
   const [currentPercentage, setCurrentPercentage] = useState(0);
+  const progressBarRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
-    let start = 0;
-    const interval = setInterval(() => {
-      if (start <= percentage) {
-        setCurrentPercentage(start);
-        start++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 20); // Adjust speed of percentage increase
-    return () => clearInterval(interval);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 } // Adjust threshold as needed
+    );
+
+    if (progressBarRef.current) {
+      observer.observe(progressBarRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (isVisible) {
+      let start = 0;
+      const interval = setInterval(() => {
+        if (start <= percentage) {
+          setCurrentPercentage(start);
+          start++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 20); // Adjust speed of percentage increase
+      return () => clearInterval(interval);
+    }
+  }, [isVisible, percentage]);
+
   return (
-    <div className=" flex items-center justify-center gap-2 py-4 pt-8 ">
+    <div
+      ref={progressBarRef}
+      className=" flex items-center justify-center gap-2 py-4 pt-8 "
+    >
       <h3 className=" text-xl">{name1}</h3>
       <div className="relative w-[400px] bg-gray-200 rounded-full h-4 flex items-center">
         {/* The background progress bar */}

@@ -1,4 +1,4 @@
-import logo from '../../assets/avatar.png';
+import logo from '../../assets/avatar.jpg';
 
 export const Header = () => {
   return (
@@ -7,7 +7,7 @@ export const Header = () => {
         <img
           src={logo}
           alt="logo"
-          className=" rounded-full w-48 h-48 bg-cover"
+          className=" rounded-full w-48 h-48 bg-contain"
         />
       </div>
     </header>

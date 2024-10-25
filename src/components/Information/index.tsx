@@ -10,7 +10,7 @@ export const Information = () => {
   return (
     <div>
       <div className="text-center mt-12 ">
-        <h2 className=" font-bold text-3xl">Trần Văn Tĩnh</h2>
+        <h2 className=" font-bold text-3xl">Tran Van Tinh</h2>
         <p className="text-2xl">Web Developer</p>
       </div>
 

@@ -1,5 +1,34 @@
-export const Card = () => {
+type CardItem = {
+  link: string;
+  imgLogo: string;
+  imgBanner: string;
+  name: string;
+  id: number;
+};
+export const Card: React.FC<CardItem> = ({
+  link,
+  imgLogo,
+  imgBanner,
+  name,
+  id
+}) => {
   return (
-    <div className="h-[260px] w-[235px] bg-slate-500 hover:-translate-y-24 rounded-lg transform duration-300"></div>
+    <a
+      key={id}
+      href={link}
+      target="blank"
+      className="h-[260px] w-[235px] bg-black hover:-translate-y-24 rounded-tr-lg rounded-bl-lg transform duration-300 relative cursor-pointer"
+    >
+      <img src={imgBanner} alt={name} className=" opacity-80" />
+      <div className=" absolute h-[140px] w-[240px] -rotate-45 border-l-[120px] -top-[35px] -left-[85px] border-l-transparent border-r-[120px] border-r-transparent border-b-[120px] border-b-[#DC5454] "></div>
+      <h2 className=" text-white absolute -rotate-45 font-semibold text-3xl left-4 top-11">
+        Website
+      </h2>
+      <img
+        src={imgLogo}
+        alt={name}
+        className=" absolute rounded-full w-12 h-12 top-4 left-4"
+      />
+    </a>
   );
 };
