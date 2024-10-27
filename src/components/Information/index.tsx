@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa6';
 export const Information = () => {
   return (
-    <div>
+    <div className=" relative">
       <div className="text-center mt-12 ">
         <h2 className=" font-bold text-3xl">Tran Van Tinh</h2>
         <p className="text-2xl">Web Developer</p>
