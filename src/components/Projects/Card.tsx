@@ -17,7 +17,7 @@ export const Card: React.FC<CardItem> = ({
       key={id}
       href={link}
       target="blank"
-      className="h-[260px] w-[235px] bg-black hover:-translate-y-24 rounded-tr-lg rounded-bl-lg transform duration-300 relative cursor-pointer"
+      className=" bg-black md:hover:-translate-y-20 sm:hover:translate-y-0 rounded-tr-lg rounded-bl-lg transform duration-300 relative cursor-pointer lg:ml-0 md:-ml-6"
     >
       <img
         src={imgBanner}

@@ -36,11 +36,11 @@ export const Projects = () => {
     }
   ];
   return (
-    <div className="mt-20">
+    <div className="md:mt-48 sm:mt-20 xl:mt-60 px-4">
       <Title name="Some previous projects" />
 
-      <div className=" bg-[#3ABEF9] w-full h-48 relative mt-40 shadow-2xl">
-        <div className=" px-16 grid grid-cols-4 gap-24 absolute -top-[34%]">
+      <div className=" md:bg-[#3ABEF9] sm:bg-transparent w-full h-56 md:h-48 xl:h-72 sm:h-full relative md:mt-60 xl:mt-96 sm:mt-10 shadow-2xl">
+        <div className=" lg:px-16 px-8 grid md:grid-cols-4 sm:grid-cols-1 lg:gap-24 md:gap-0 sm:gap-10 md:absolute sm:relative md:-top-[30%] xl:-top-full lg:-top-[65%] sm:top-0">
           {listPrj.map((item, index) => (
             <Card
               id={index}
@@ -51,7 +51,7 @@ export const Projects = () => {
             />
           ))}
         </div>
-        <div className="bg-light-primary w-full h-20 absolute rounded-t-lg top-[60%] "></div>
+        <div className="bg-light-primary w-full h-28 absolute rounded-t-lg top-[66%] xl:top-[62%] md:top-1/2 md:block sm:hidden "></div>
       </div>
     </div>
   );

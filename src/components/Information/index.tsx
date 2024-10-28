@@ -1,11 +1,14 @@
 import { Animation } from './Animation';
-import { Text } from './Text';
+import 'animate.css';
 import {
   FaFacebook,
   FaSquareXTwitter,
   FaTelegram,
   FaGithub
 } from 'react-icons/fa6';
+
+import { Text } from './Text';
+import banner from '../../assets/banner-animation.png';
 export const Information = () => {
   return (
     <div className=" relative">
@@ -14,7 +17,7 @@ export const Information = () => {
         <p className="text-2xl">Web Developer</p>
       </div>
 
-      <div className=" grid grid-cols-2 gap-20 mt-12">
+      <div className=" grid lg:grid-cols-2 md:grid-rows-2 md:grid-cols-1 lg:grid-rows-1  lg:gap-10 md:gap-40 mt-12">
         <div className="px-12 py-10 bg-light-primary rounded-3xl">
           <h2 className="text-center text-3xl font-semibold font-mono">
             Personal Info
@@ -45,8 +48,12 @@ export const Information = () => {
             </h2>
           </div>
         </div>
-
         <Animation />
+        <img
+          src={banner}
+          alt="banner-animation"
+          className=" md:hidden sm:block mt-10 mx-auto px-4 animate__animated  animate__fadeInUp"
+        />
       </div>
     </div>
   );

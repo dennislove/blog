@@ -1,16 +1,16 @@
-import { CSSProperties, lazy, Suspense } from "react";
-import HashLoader from "react-spinners/ClipLoader";
-import { Title } from "../Title";
+import { CSSProperties, lazy, Suspense } from 'react';
+import HashLoader from 'react-spinners/ClipLoader';
+import { Title } from '../Title';
 
 const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
+  display: 'block',
+  margin: '0 auto'
 };
-const PDFViewer = lazy(() => import("../MyCV/PDFViewer"));
+const PDFViewer = lazy(() => import('../MyCV/PDFViewer'));
 
 export const MyCV = () => {
   const loading = true;
-  const color = "#A7E6FF";
+  const color = '#A7E6FF';
 
   return (
     <div className="mt-20">

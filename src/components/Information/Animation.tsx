@@ -15,7 +15,7 @@ import './style.css';
 
 export const Animation = () => {
   return (
-    <div className=" relative mt-10 banner-image">
+    <div className=" md:block sm:hidden relative mt-10 banner-image md:-ml-20 left-[20%]">
       <img
         src={item1}
         alt="language"

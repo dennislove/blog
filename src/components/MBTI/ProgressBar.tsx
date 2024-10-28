@@ -53,10 +53,12 @@ export const ProgressBar = ({
   return (
     <div
       ref={progressBarRef}
-      className=" grid grid-cols-6 gap-4 items-center justify-center py-4 pt-8 "
+      className=" grid md:grid-cols-6 sm:grid-cols-4 md:gap-4 sm:gap-2 items-center justify-center py-4 pt-8 px-4 "
     >
-      <h3 className=" text-xl text-right">{name1}</h3>
-      <div className="col-start-2 col-span-4  relative w-full bg-gray-200 rounded-full  flex items-center">
+      <h3 className=" md:text-xl sm:text-base md:text-right sm:text-left">
+        {name1}
+      </h3>
+      <div className="col-start-2 md:col-span-4 sm:col-span-2  relative w-full bg-gray-200 rounded-full  flex items-center">
         {/* The background progress bar */}
         <div
           className="absolute bg-blue-500 h-4 rounded-full transition-all duration-1000"
@@ -76,7 +78,9 @@ export const ProgressBar = ({
           </span>
         </div>
       </div>
-      <h3 className=" text-xl">{name2}</h3>
+      <h3 className=" md:text-xl sm:text-base sm:text-right md:text-left">
+        {name2}
+      </h3>
     </div>
   );
 };

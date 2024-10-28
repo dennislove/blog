@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className=" px-20">
+      <div className=" lg:px-20 md:px-10">
         <Information />
         <Projects />
         <MyCV />

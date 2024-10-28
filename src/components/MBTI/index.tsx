@@ -5,7 +5,7 @@ export const MBTI = () => {
   return (
     <div className=" mt-20">
       <Title name="MBTI" />
-      <div className=" grid grid-cols-3 items-center gap-4 rounded-l-lg bg-slate-200 mt-10">
+      <div className=" grid lg:grid-cols-3 md:grid-cols-1 lg:grid-row-1 md:grid-row-2 items-center rounded-l-lg bg-slate-200 mt-10">
         <InforLeft />
         <div className=" col-span-2 py-4">
           <ProgressBar
